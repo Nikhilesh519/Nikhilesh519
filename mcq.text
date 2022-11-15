@@ -1,0 +1,185 @@
+1.The 'var' and 'function' are knowns as "Data Declaration".
+ explaination:The "function" and "var" both are the Declaration statements.
+ These both are used for defining, and declaring variable, function in anywhere in the program.
+
+2.Which of these is a correct output for the JavaScript code given below?  
+  String X= "Hey";
+  String Y="There";
+   alert(X+Y);
+  
+  answer: undefined
+  explaination: string datatype is not present in javascript top declare string.we need to use 'var'.
+
+3. Which of these is known as the Equality operator used for checking whether both the values are equal?
+ 
+   answer:==
+   explaination: The "==" called the equality operators, it returns true if both the value are equal otherwise it returns false.
+
+4. function sayHi() {
+      console.log(name);
+      console.log(age);
+      var name ='Lydia';
+      let age = 21;
+    }
+    sayHi();
+     
+     answer:D:undefined and reference error
+     explaination: Within the function, we first declare the name variable with the var keyword. 
+                   This means that the variable gets hoisted with the default value of undefined.
+                   When we try to access the variables before they are declared, JavaScript throws a ReferenceError.
+
+5. for (var i=0; i<3; i++) {
+            setTimeout(() => console.log(i), 1);
+          }
+         
+          for (let i=0; i<3; i++) {
+            setTimeout(() => console.log(i), 1);
+          }
+
+         answer:C
+         explaination: the setTimeout callback function is called after the loop has been executed. 
+                       Since the variable i in the first loop was declared using the var keyword, this value was global.
+                       During the loop, we incremented the value of i by 1 each time, using the unary operator ++. By the time the setTimeout callback function was invoked, i was equal to 3 in the first example.
+                       In the second loop, the variable i was declared using the let keyword: variables declared with the let (and const) keyword are block-scoped (a block is anything between { }). 
+                       During each iteration, i will have a new value, and each value is scoped inside the loop.
+
+6. function Person(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+      const lydia = new Person(lydia, hallie);
+      const sarah = Person(sarah, smith);
+      console.log(lydia);
+      console.log(sarah);  
+    
+    answer:(A) Person {firstName: "Lydia", lastName: "Hallie"} and undefined
+     explaination: For sarah, we didn't use the new keyword. When using new, this refers to the new empty object we create. 
+                   However, if you don't add new, this refers to the global object.
+
+7.function sum(a, b) {
+        return a + b;
+      }
+       sum(1,'2');
+       
+       answer:NAN
+       explaination:No output we can't add number and string
+
+8. let number = 0;
+     console.log(number++);
+     console.log(++number);
+     console.log(number);
+
+     answer:c
+     explaination: 
+           post increment --> Returns the value (this returns 0),Increments the value (number is now 1).
+           pre increment ---> Increments the value (number is now 2),Returns the value (this returns 2).
+
+9.   var num = 8;
+     var num = 10;
+
+    console.log(num);
+
+    answer:(B) 10
+    explaination: With the var keyword, you can declare multiple variables with the same name. 
+                  The variable will then hold the latest value.
+
+
+10. const obj = { a: 'one', b: 'two', a: 'three' };
+    console.log(obj);                  
+    
+    answer:(c)
+    explaination: If we have two keys with the same name, the key will be replaced.
+                  It will still be in its first position, but with the last specified value.
+
+
+11.  Output of code 
+      var text = 'outside';
+      function logIt(){
+      console.log(text);
+      var text = 'inside';
+     };
+      logIt()                  
+
+      answer:undefined.
+
+13. What is call apply bind explain this with the help of example.
+
+answer:call--call() method,you write a method that can be used in different object,arrugument taken as seperatly
+       apply--apply()method,it is similary as call method but arrugumets takes as array formate
+       bind--bind()method,an object can borrow a method from another object
+
+  example-
+  
+  let Person={
+    firstName:"nikhil",
+    getName:function(){
+        console.log(this.getName);
+    }
+  };
+  Person.getName();
+
+14.Explain Hoisting with example.
+
+answer: Hoisting means a variable can be used before it has been declared. A variable is declared by the js engine as a default so that we can use it directly.
+        We will get reference error for not assigning anything to that variable.
+        We can directly specify the value to variable without var Keyword.
+
+    example:
+
+   sum(5,10);
+
+   function sum(a,b){
+    add=a+b;
+    console.log(add);
+   }
+
+15.   var length = 10;
+      function fn() {
+      console.log(this.length);
+    }
+      var obj = {
+         length: 5,
+      method: function(fn) {
+             fn();
+      arguments[0]();
+    }
+  };
+    obj.method(fn, 1);
+
+  answer:10
+         2  
+
+16. what would following code return
+     console.log(typeof typeof 1);
+
+     answer:string
+
+17. write a progroam to delete employee whose age is 18
+[
+    {
+        id:1,
+        age:40
+    },
+    {
+        id:2,
+        age:50
+    },
+    {
+        id:3,
+        age:40
+    },
+    {
+        id:4,
+        age:20
+    }
+]     
+
+answer:for(i=0;i<arr.length;i++){
+       if(arr[i].age == 18){
+        arr.splice(i,1);
+    }
+
+}
+console.log(arr);
+
+
